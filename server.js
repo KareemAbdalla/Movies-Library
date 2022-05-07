@@ -33,6 +33,14 @@ const serverIssueHandler = (req, res) => {
 }
 
 
+//  http://localhost:3000/
+app.get("/", homeHandler);
+//  http://localhost:3000/favorite
+app.get("/favorite", favoriteHandler);
+//  http://localhost:3000/*
+app.get("*", notFoundHandler);
+
+
 //constructor
 function Movie(title, release_date, genre) {
     this.id = id;
