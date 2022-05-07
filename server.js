@@ -6,10 +6,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const cors = require("cors");
-const axios = require("axios").default;
 require("dotenv").config();
 app.use(cors());
-let apiKey = process.env.API_KEY;
+
 
 //functions
 const favoriteHandler = (req, res) => {
@@ -18,7 +17,7 @@ const favoriteHandler = (req, res) => {
 }
 
 const homeHandler = (req, res) => {
-    let test = `Home Path`;
+    let test = "home path";
     res.send(test);
 }
 
@@ -41,19 +40,12 @@ app.get("/favorite", favoriteHandler);
 app.get("*", notFoundHandler);
 
 
-//constructor
 function Movie(title, release_date, genre) {
-    this.id = id;
     this.title = title;
     this.release_date = release_date;
     this.genre = genre;
 
 }
-
-//function Error(status, responseText) {
-  //  this.status = status;
-    //this.responseText = responseText;
-//}
 
 app.listen(port, () => {
     console.log(`listening at port ${port}`);
