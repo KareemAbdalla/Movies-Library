@@ -11,6 +11,7 @@ app.use(cors());
 let apiKey = "3c271d042d5fcc4c342a5b1ddcbbc20b"
 const movieData = require("./Movie Data/data.json");
 
+
 //functions
 const favoriteHandler = (req, res) => {
     res.send("Welcome to Favorite Page");
